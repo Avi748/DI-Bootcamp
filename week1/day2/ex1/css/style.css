@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+
+nav{
+    background-color: black;
+    height: 10vh;
+}
+
+.logo{
+    margin-top: 10px;
+    height: 8vh;
+    width: 6vw;
+}
+
+ul{
+    list-style-type: none;
+    float: right;
+}
+
+li{
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+}

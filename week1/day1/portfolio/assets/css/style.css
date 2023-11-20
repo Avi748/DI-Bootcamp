@@ -1,0 +1,29 @@
+.text{
+    color: black;
+    background-color: aquamarine;
+    border: 5px outset green;
+    padding: 30px;
+    margin: 50px;
+}
+span{
+    display: inline;
+}
+
+.parent{
+    height: 50px;
+    width: 15px;
+    display: inline-block;
+}
+
+.text>.parent>.blue{
+    background-color: blue;
+}
+
+.parent>.white{
+    background-color: white;
+}
+
+.parent>.red{
+    background-color: red;
+}
+

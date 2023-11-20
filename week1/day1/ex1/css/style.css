@@ -1,0 +1,50 @@
+.header{
+    border-bottom: 2px solid black;
+}
+
+.senses{
+    margin-left: 70px;
+}
+
+.senses h2{
+    text-decoration: underline;
+}
+
+h2{
+    text-align: center;
+}
+
+.media{
+    border: 10px solid salmon;
+    display: inline-block;
+    margin-left: 570px;
+    margin-top: 20px;
+}
+
+.media img{
+    height: 200px;
+    width: 500px;
+    float: right;
+    
+}
+
+table{
+    width: 100%;
+    border-collapse:separate; 
+    border-spacing: 0 1em;
+}
+
+th{
+    border: 1px solid red;
+    color: red;
+    
+}
+
+td{
+    text-align: center;
+    border: 1px solid black;
+}
+
+.lastrow td{
+    height: 70px;
+}

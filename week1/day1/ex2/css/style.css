@@ -1,0 +1,42 @@
+.body{
+    background-color: aliceblue;
+}
+
+form.signin{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.signin button{
+    float: right;
+    margin-right: 60px;
+    background-color: dodgerblue;
+    color: white;
+}
+.container{
+    background-image: url(https://images.pexels.com/photos/1533720/pexels-photo-1533720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+}
+.container h2{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    padding-top: 40px;
+}
+form.signup{
+    text-align: center;
+    
+}
+.responsive{
+    border: 1px hidden;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 120px;
+    text-align: center;
+}
+i{
+    color: dodgerblue;
+}
