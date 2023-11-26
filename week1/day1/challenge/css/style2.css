@@ -45,3 +45,36 @@ li{
 h1{
     font-size: 4vw;
 }
+
+@media screen and (max-width: 768px)  {
+    h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 600px)  {
+    .text h1 {
+        font-size: 35px;
+    }
+}
+
+@media all and (max-width: 480px) { 
+    nav, li{
+        background-color: yellow;
+        color: black;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    nav, li{
+        background-color: lightgreen;
+        color: black;
+    }
+}
+
+@media all and (min-width: 992px) and (max-width: 1024px) { 
+    nav, li{
+        background-color: red;
+        color: white;
+    }
+}

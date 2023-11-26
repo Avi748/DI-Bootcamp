@@ -1,0 +1,13 @@
+nav .navbar-brand{
+    padding-left: 30px;
+}
+
+.btn{
+    margin-right: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}

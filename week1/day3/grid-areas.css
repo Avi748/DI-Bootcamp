@@ -1,0 +1,47 @@
+.container{
+    display: grid;
+    height: 100vh;
+    /* grid-template-columns: repeat(8, 80px); */
+    gap: 10px;
+    grid-template-areas: 
+    "a a a a a"
+    "b b c c c" 
+    "b b c c c" 
+    "d d c c c"
+    "d d e e e"
+    "d d e e e"
+    "f f f f g"
+    "h h h h h";
+}
+
+.header{
+    background-color: aliceblue;
+}
+
+.hero{
+    background-color: aqua;
+}
+
+.main-content{
+    background-color: yellow;
+}
+
+.sidebar{
+    background-color: blueviolet;
+}
+
+.extra-content{
+    background-color: green;
+}
+
+.related-images{
+    background-color: chartreuse;
+}
+
+.related-posts{
+    background-color: brown;
+}
+
+.footer{
+    background-color: gray;
+}
