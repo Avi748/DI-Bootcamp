@@ -56,11 +56,15 @@ new_user = ['Ron Weasley', 34, 1.8, True]
 # print(users_c)
 
 #C) extend()
-# users_c.extend(new_user)
+# users_c.extend([new_user])
 
 #D) insert
 # users_c.insert(0, 'Harmione Granger')
 # print(users_c)
+
+#E) copy list
+# new_user = users_a[:]
+# new_user = users_a.copy
 
 
 

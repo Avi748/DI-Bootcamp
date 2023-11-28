@@ -44,3 +44,6 @@ students = ['Lior', 'Sveta', 'Estee', 'David']
 for i,j in enumerate(students):
     if i == 2:
         print(j)
+
+for name in enumerate(students):
+    print(name)

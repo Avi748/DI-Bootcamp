@@ -20,7 +20,20 @@
 # for i in range(1,11):
 #     print(i * user_num)
 
-num = 1
-while num <= 10:
-    print(num)
-    num += 1
+# num = 1
+# while num <= 10:
+#     print(num)
+#     num += 1
+
+user_word = "ppoeemm"
+
+output = user_word[0]
+#output = p
+for i, char in enumerate(user_word):
+    if i == 0:
+        continue
+    if user_word[i] != user_word[i-1]:
+        output += char
+print(output)
+
+
