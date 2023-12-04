@@ -1,0 +1,34 @@
+class Dogs():
+    def __init__(self, name, color, height, weight, favorite_toys):
+        print("an object was created")
+        self.name = name
+        self.color = color
+        self.height = height
+        self.weight = weight
+        self.favorite_toys = favorite_toys
+
+
+
+johnatan_dog = Dogs("Tyson", "Brown", "21", "45", ["ball", "rope"])
+print(johnatan_dog.name, johnatan_dog.color, johnatan_dog.height, johnatan_dog.weight, johnatan_dog.favorite_toys)
+johnatan_dog.favorite_toys.append("doll")
+print(johnatan_dog.favorite_toys)
+
+
+# class Person():
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def show_details(self):
+#         print("Hello my name is " + self.name)
+    
+#     def rename(self, new_name):
+#         self.name = new_name
+#         return self.name
+
+
+# first_person = Person("John", 36)
+# first_person.show_details()
+# first_person.rename("Avi")
+# first_person.show_details()
