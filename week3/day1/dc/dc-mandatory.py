@@ -8,6 +8,10 @@ class Farm():
         self.anime_name = animal_name
         self.amount = amount
         self.animals[animal_name] = amount
+        count = 0
+        if self.anime_name in self.animals.keys():
+            self.amount += 1
+        print(self.animals)
 
     def get_info(self):
         for a in self.animals.items():
@@ -17,5 +21,5 @@ macdonald = Farm("McDonald")
 macdonald.add_animal('cow', 5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')
-macdonald.add_animal('goat', 12)
-macdonald.get_info()
+# macdonald.add_animal('goat', 12)
+# macdonald.get_info()
