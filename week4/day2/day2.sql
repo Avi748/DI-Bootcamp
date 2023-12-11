@@ -41,6 +41,7 @@ VALUES(700, 'iPad');
 INSERT INTO 
     products (price, name)
 VALUES
+	(700,'iPad'),
     (800,'iPhone'),
     (600,'iWatch'),
     (900,'iCar');
@@ -120,5 +121,99 @@ UPDATE products SET name = 'iPhone13', price=1000 WHERE id = 2;
 
 DELETE FROM products WHERE id = 2;
 
+DELETE FROM products
 
+TRUNCATE products;
+
+DROP TABLE products;
+
+
+-- Aggregate functions
+-- AVG
+-- COUNT
+-- MAX / MIN
+-- SUM
+
+SELECT COUNT(1) FROM products
+SELECT SUM(price) FROM products
+SELECT MAX(price) FROM products
+SELECT MIN(price) FROM products
+SELECT AVG(price) FROM products
+
+--Length
+
+SELECT LENGTH(name), name, price FROM products WHERE LENGTH(name) > 4
+
+-- Create another table
+SELECT * FROM products
+
+CREATE TABLE products_desc (
+	id serial PRIMARY KEY,
+	description VARCHAR ( 500 ),
+	product_id integer NOT NULL,
+	CONSTRAINT fk_product
+		FOREIGN KEY (product_id)
+			REFERENCES products(id)
+);
+
+SELECT * FROM products
+
+INSERT INTO
+	products_desc (description, product_id)
+VALUES
+	('Amazing iPad', 1),
+	('Great iPhone', 2),
+	('Best iWatch', 3),
+	('Fastest car ever iCar', 41)
+
+SELECT * FROM products
+
+
+--JOIN
+
+SELECT products.id, products.price, products_desc.description FROM products
+INNER JOIN products_desc
+ON products.id = products_desc.product_id
+
+
+SELECT products.id, products.price, products_desc.description 
+FROM products, products_desc
+WHERE products.id = products_desc.product_id
+
+
+SELECT products.id, products.price, products_desc.description FROM products
+LEFT JOIN products_desc
+ON products.id = products_desc.product_id
+
+SELECT products.id, products.price, products_desc.description FROM products
+RIGHT JOIN products_desc
+ON products.id = products_desc.product_id
+
+SELECT products.id, products.price, products_desc.description FROM products
+FULL JOIN products_desc
+ON products.id = products_desc.product_id
+
+
+SELECT city.city, country.country FROM city
+INNER JOIN country
+ON city.country_id = country.country_id
+
+SELECT 
+	customer.first_name, 
+	customer.last_name, 
+	customer.email, 
+	address.address, 
+	address.district,
+	city.city,
+	country.country
+FROM customer
+INNER JOIN address
+ON customer.address_id = address.address_id
+INNER JOIN city
+ON address.city_id = city.city_id
+INNER JOIN country
+ON city.country_id = country.country_id
+
+
+DROP TABLE products_desc
 
