@@ -299,9 +299,33 @@
 // };
 
 //Continue
-for (let i = 0; i < 10; i++){
-    if (i === 3 || i === 5 || i === 8){
-        continue;
-    }
-    console.log("The position is "+ i);
-};
+// for (let i = 0; i < 10; i++){
+//     if (i === 3 || i === 5 || i === 8){
+//         continue;
+//     }
+//     console.log("The position is "+ i);
+// };
+
+
+//Let and const
+//Let -> when we need to re-define the variable in the future
+
+// for (let x = 2; x < 30; x++){
+//     console.log(x)
+// };
+
+// let username;
+
+// do {
+//     username = prompt("What is your username?");
+// } while (username !== "admin")
+
+// for (let x = 1; x < 5; x++){
+//     console.log(x)
+//     let fname = "Avi";
+
+//     for (let i = 0; i < 5; i++){
+//         console.log(fname)
+//     };
+// };
+
