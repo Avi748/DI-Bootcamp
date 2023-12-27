@@ -168,12 +168,52 @@
 
 
 //Attributes
-const div = document.querySelector("div");
-console.log(div.hasAttribute("class"))
-console.log(div.getAttribute("class"))
+// const div = document.querySelector("div");
+// console.log(div.hasAttribute("class"))
+// console.log(div.getAttribute("class"))
 
-div.setAttribute("id", "red");
-div.removeAttribute("id");
+// div.setAttribute("id", "red");
+// div.removeAttribute("id");
 
 // img.setAttribute("src", "link")
 // div.append(img);
+
+
+//Forms
+// const personform = document.forms.personform;
+// const dogform = document.forms.dogform;
+
+// console.log(personform.children[0]);
+// console.log(personform.children.age);
+// console.log(personform.children.age.value);
+// personform.children.age.value = "I am a diff value";
+// console.log(dogform)
+
+// const forms = document.forms.radioForm
+// console.log(radioForm.children)
+
+//Class Ex forms
+
+//1
+// const select = document.getElementById("school-type");
+// console.log(select.options[1].value);
+
+// const option = new Option("work", "work");
+// select.append(option);
+
+// const option2 = new Option("Primary school", 
+// "Primary school");
+
+// select.insertBefore(option2, select.options[0])
+// select.prepend(option2); // appand at the begining
+
+// for (let i = 0; i < select.options.length; i++){
+//     console.log(select.options[i])
+//     if (select.options[i].value == "college"){
+//         select.options[i].selected = true;
+//     }else{
+//         select.options[i].selected = false;
+//     }
+// };
+
+// console.log(select.options[3].selected = true)
