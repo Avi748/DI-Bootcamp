@@ -93,9 +93,7 @@ const postMethods = () => {
         postElement.append(img, h2, p)
         postContainer.appendChild(postElement)
     })
-}
-
-postMethods(robots)
+};
 
 document.querySelector('#searchRobot');
 addEventListener('input', filterList);
@@ -104,15 +102,19 @@ function filterList(){
     const searchInput = document.querySelector('#searchRobot');
     const filter = searchInput.value.toLowerCase();
     const cards = document.querySelectorAll(".card")
-    console.log(cards)
+    // console.log(cards)
     
     cards.forEach((card) => {
-        const text = card.name;
-        console.log(text, filter)
-        if(text.toLowerCase().inculdes(filter.toLowerCase())){
-            card.style.display = '';
+        const text = card.textContent.toLowerCase();
+        // console.log(text, filter)
+        if(text.includes(filter)){
+          card.style.display = '';
+            // console.log(filter)
         }else{
             card.style.display = 'none';
+            // console.log(filter)
         }
     });
-}
+};
+
+postMethods();
