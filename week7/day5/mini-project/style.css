@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+    font-family: 'Helvetica Neue';
+    color: yellow;
+    text-align: center;
+}
+  
+.logo {
+  
+    background: url("https://seeklogo.com/images/S/Star_Wars-logo-2B2C24F703-seeklogo.com.png") center no-repeat;
+    width: 400px;
+    height: 200px;
+    margin:  0 auto;
+    margin-top: -20px;
+}
+  
+  
+#container{
+  
+    border: 3px solid yellow;
+    border-radius: 15px;
+    width: 600px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: -25px;
+  
+}
+
+.fa-fw{
+    margin-top: 70px;
+}
+
+  
+#bTn{
+    margin-top: 20px;
+    border: 3px solid yellow;
+    border-radius: 10px;
+    width: 180px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+  
+p{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
