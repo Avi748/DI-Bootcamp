@@ -1,6 +1,8 @@
 const express = require('express');
 const {fetchPosts} = require('./data/dataService.js');
-// console.log(fetchPosts())
+// fetchPosts().then(res => {
+//     console.log(res);
+// })
 
 const app = express();
 app.listen(5000, () => {

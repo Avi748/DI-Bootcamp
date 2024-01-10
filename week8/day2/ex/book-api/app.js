@@ -7,6 +7,10 @@ const data = [
 ];
 
 const book = express();
+
+book.use(express.urlencoded({extended:true}));
+book.use(express.json());
+
 book.listen(5000);
 
 book.get("/api/books", (request, response) => {
@@ -22,3 +26,10 @@ book.get("/api/books/:bookId", (request, response) => {
         return response.status(200), response.json(book_id)
     }
 });
+
+book.post('/api/books', (req, res) => {
+    console.log(req.body);
+    const new_book = {...req.body, id:data.length + 1};
+    data.push(new_book);
+    res.status(201).json(data)
+})

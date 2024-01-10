@@ -4,8 +4,12 @@
  */
 
 const express = require('express');
+// const bp = require('body-parser');
 
 const app = express();
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
 app.listen(3001, () => {
     console.log('run on port 3001');
 });
@@ -30,6 +34,7 @@ app.get("/users", (request, response) => {
 });
 
 //params
+/** Read */
 app.get("/users/:id", (request, response) => {
     console.log(request.params);
     const {id} = request.params;
@@ -39,6 +44,7 @@ app.get("/users/:id", (request, response) => {
 });
 
 //query
+/** Read */
 app.get('/search', (req, res) => {
     console.log(req.query);
     const {name} = req.query;
@@ -51,11 +57,39 @@ app.get('/search', (req, res) => {
     res.json(filtername)
 })
 
+/** Create - a new user - POST*/
 
-// app.get("/api", (request, response) => {
-//     response.send("<h1>Hello</h1>")
-// });
+app.post('/users', (req, res) => {
+    console.log(req.body);
+    const new_user = {...req.body, id:users.length + 1};
+    users.push(new_user);
+    res.status(201).json(users)
+})
 
-// app.post("/users", (request, response) => {
-//     response.send("<h1>Hello</h1>")
-// });
+/** Update -update a user - PUT */
+/** user id - to update - params
+ * data - name , email to update - body
+ */
+app.put('/users/:id', (req, res) => {
+    const {id} = req.params;
+    const {name, email} = req.body;
+
+    const indx = users.findIndex(item => item.id == id)
+    if(indx === -1) return res.sendStatus(404);
+
+    users[indx] = {...users[indx], name:name, email:email};
+
+    res.json(users);
+});
+
+/** Delete - delete a user */
+/** id as params - delete user */
+app.delete('/users/:id', (req, res) => {
+    const {id} = req.params
+
+    const indx = users.findIndex(item => item.id == id)
+    if(indx === -1) return res.sendStatus(404);
+
+    users.splice(indx, 1);
+    res.json(users)
+});

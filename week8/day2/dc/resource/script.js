@@ -27,7 +27,26 @@ const render = (arr) => {
     select.innerHTML = name.join('')
 }
 
-async function checkSubmit(){
-    const v = select.value
-    console.log(v)
+async function checkSubmit(e){
+    e.preventDefault();
+
+    const data = new FormData(document.getElementById("form"));
+  
+    console.log(Array.from(data));
+  
+    try {
+      const res = await fetch(
+        'http://localhost:3000/emoji/',
+        {
+          method: 'POST',
+          body: data
+        },
+      );
+  
+      const resData = await res.json();
+  
+      console.log(resData);
+    } catch (err) {
+      console.log(err.message);
+    }
 }
