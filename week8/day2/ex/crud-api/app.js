@@ -1,5 +1,5 @@
 const express = require('express');
-const {fetchPosts} = require('./data/dataService.js');
+const {fetchPosts, getPosts} = require('./data/dataService.js');
 // fetchPosts().then(res => {
 //     console.log(res);
 // })
@@ -9,11 +9,4 @@ app.listen(5000, () => {
     console.log('Server is running');
 });
 
-app.get("/data", (request, response) => {
-    try {
-        response.send(fetchPosts())
-        
-    } catch (error) {
-        console.log(error)
-    }
-});
+app.get("/posts", getPosts);
