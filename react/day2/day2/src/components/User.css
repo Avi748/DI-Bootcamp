@@ -1,0 +1,13 @@
+.userstyle{
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius:  15px;
+    background-color: cyan;
+}
+
+body {
+    /* background-color: navy; */
+}
