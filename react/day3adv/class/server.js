@@ -11,10 +11,12 @@ app.listen(3001, () => {
     console.log('run on port 3001');
 });
 
-app.get("/api/hello", (req, res) => {
-    res.send("Hello From Express");
+app.get("/hello", (req, res) => {
+    res.json({greeting: "Hello"})
+    // res.send("Hello Text")
 })
 
-app.get("/api/world/:message", (req, res) => {
-    res.json({message: `I received your POST request. This is what you sent me: ${req.params.message}`})
+app.get("/hello/:name", (req, res) => {
+    res.json({greeting: `Hello, ${req.params.name}`})
+    // res.send(`Hello Text, ${req.params.name}`)
 })
