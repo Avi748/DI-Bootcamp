@@ -1,48 +1,54 @@
-import {useState, useRef} from 'react'
+import {useState, useReducer} from 'react'
 import './App.css';
 
 /** 
- * useContext , createContext
- * useRef
  * useReducer
  */
 
+const initState = {
+  count : 0
+}
+
+const INCREMENT = 'increment';
+const DECREMENT = 'decrement';
+
+const reducer = (state, action) => {
+  console.log('action=> ', action);
+
+  if(action.type === INCREMENT){
+    return {...state, count : state.count + action.by}
+  }
+  else if (action.type === DECREMENT){
+    return {...state, count : state.count - action.by}
+  }
+  return state
+
+  // switch (action.type){
+  //   case "increment":
+  //     return {...state, count : state.count + action.by};
+  //   case "decrement":
+  //     return {...state, count : state.count - action.by};
+  //   default:
+  //     return state;
+  // }
+};
+
 function App() {
   const [count, setCount] = useState(0);
-
-  let name = "John"
-  const nameRef = useRef('Dan');
-  const inputRef = useRef();
-  // console.log(inputRef.current.value);
-
-  const changeJohn = () => {
-    name = "Marry"
-    console.log(name);
-  }
-
-  const changeDan = () => {
-    nameRef.current = "DanDan"
-    console.log(nameRef);
-  }
+  const [state, dispatch] = useReducer(reducer, initState);
+  console.log(state);
+  
 
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          <h2>{count}</h2>
-          <button onClick={() => {setCount(count + 1)}}>+</button>
-          <div>
-            <h3>{name}</h3>
-            <button onClick={() => changeJohn()}>Change John</button>
-          </div>
-          <div>
-            <h3>{nameRef.current}</h3>
-            <button onClick={() => changeDan()}>Change Dan</button>
-          </div>
-          <div>
-            <input ref={inputRef}/>
-          </div>
-        </div>
+        <button onClick={() => setCount(count + 1)}>+</button>
+        {count}
+        <button onClick={() => setCount(count - 1)}>-</button><br/>
+        <h2>useReducer</h2>
+        <button onClick={() => dispatch({type : INCREMENT, by:10})}>+</button>
+        {state.count}
+        <button onClick={() => dispatch({type : DECREMENT, by:10})}>-</button><br/>
       </header>
     </div>
   );
